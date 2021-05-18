@@ -1,5 +1,6 @@
-package com.stephane_droz.system;
+package com.stephane_droz;
 
+import com.stephane_droz.JWTAuthenticator;
 import jakarta.json.stream.JsonGenerator;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
@@ -28,5 +29,9 @@ public class RestClient {
                 .property(JsonGenerator.PRETTY_PRINTING, true)
                 .register(new JWTAuthenticator(jwt))
                 .build();
+    }
+
+    public WebTarget getWebTarget(String token, String URL){
+        return getConfiguredClient(token).target(URL);
     }
 }

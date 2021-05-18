@@ -1,4 +1,4 @@
-package com.stephane_droz.system;
+package com.stephane_droz;
 
 import jakarta.ws.rs.client.ClientRequestContext;
 import jakarta.ws.rs.client.ClientRequestFilter;
